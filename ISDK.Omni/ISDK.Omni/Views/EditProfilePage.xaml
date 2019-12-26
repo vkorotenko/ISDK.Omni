@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:cells="clr-namespace:ISDK.Omni.Cells;assembly=ISDK.Omni"
+             mc:Ignorable="d"
+             Visual="Material"
+             Title="{Binding Title}"
+             x:Class="ISDK.Omni.Views.EditProfilePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <AbsoluteLayout Grid.Row="0">
+            <TableView AbsoluteLayout.LayoutFlags="All"
+                       AbsoluteLayout.LayoutBounds="0,0,1,1"
+                       VerticalOptions="FillAndExpand" Margin="0"  HasUnevenRows="True" >
+                <TableRoot >
+                    <TableSection >
+                        <ViewCell >
+                            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                                        <forms:SvgCachedImage WidthRequest="140.5" HeightRequest="140.5" Source="resource://ISDK.Omni.Resources.user.svg"/>
+                                    </ContentView>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                        <cells:CellWithHeader Text="{Binding FirstName}" HeaderText="First name"></cells:CellWithHeader>
+                        <cells:CellWithHeader Text="{Binding LastName}" HeaderText="Last name"></cells:CellWithHeader>
+                        <cells:CellWithHeader Text="{Binding Phone}" HeaderText="Phone"></cells:CellWithHeader>
+                        <cells:CellWithHeader Text="{Binding Email}" HeaderText="Email"></cells:CellWithHeader>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout HeightRequest="80"></StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Frame AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds=".5,1,1,.15"
+                   HasShadow="True"
+                   Margin="0"
+                   VerticalOptions="FillAndExpand">
+                <Button
+                    Padding="5"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="White"
+                    Text="Save changes"
+                    FontAttributes="Bold"
+                    BackgroundColor="{StaticResource NavigationPrimary}"
+                    Clicked="Save_Clicked"/>
+            </Frame>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>

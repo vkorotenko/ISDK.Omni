@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+            Visual="Material"
+            BarBackgroundColor="White" BarTextColor="{StaticResource ColorPrimaryDark}"
+            xmlns:views="clr-namespace:ISDK.Omni.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Black"
+            android:TabbedPage.BarSelectedItemColor="Red"
+            x:Class="ISDK.Omni.Views.MainPage">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Home" x:Name="HomeNavPage">
+            <x:Arguments>
+                <views:ItemsPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="List" x:Name="ListNavPage">
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Card" x:Name="CardNavPage">
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Heart" x:Name="HeartNavPage">
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Edit Profile" x:Name="EditProfileNavPage">
+            <x:Arguments>
+                <views:EditProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+    
+</TabbedPage>
